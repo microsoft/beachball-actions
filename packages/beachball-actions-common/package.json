@@ -1,12 +1,12 @@
 {
-  "name": "beachball-actions-common",
+  "name": "@microsoft/beachball-actions-common",
   "version": "0.3.0",
   "private": true,
   "description": "Utilities for Beachball-related GitHub Actions",
   "author": "Elizabeth Craig <elcraig@microsoft.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ecraig12345/beachball-actions.git"
+    "url": "https://github.com/microsoft/beachball-actions.git"
   },
   "license": "MIT",
   "main": "lib/index.js",

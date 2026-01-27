@@ -1,15 +1,15 @@
 {
-  "name": "batch-runs",
+  "name": "@microsoft/batch-runs",
   "version": "0.0.0",
   "private": true,
   "description": "Cancels this workflow run if a newer one is pending",
   "scripts": {
     "build": "rimraf lib && tsc",
-    "package": "rimraf dist && ncc build --source-map --license licenses.txt src/main.ts",
+    "bundle": "rimraf dist && ncc build --source-map --license licenses.txt src/main.ts",
     "test": "jest"
   },
   "devDependencies": {
     "@actions/core": "^2.0.0",
-    "beachball-actions-common": "0.3.0"
+    "@microsoft/beachball-actions-common": "0.3.0"
   }
 }

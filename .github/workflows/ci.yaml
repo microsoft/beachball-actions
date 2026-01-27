@@ -6,7 +6,12 @@ on:
   pull_request:
     branches: [main]
 
-concurrency: ${{ github.ref }}-ci
+concurrency:
+  # For PRs, use the ref (branch) in the concurrency group so that new pushes cancel any old runs.
+  # For pushes to main, ideally we wouldn't set a concurrency group, but github actions doesn't
+  # support conditional blocks of settings, so we use the SHA so the "group" is unique.
+  group: ${{ github.workflow }}-${{ github.ref == 'refs/heads/main' && github.sha || github.ref }}
+  cancel-in-progress: true
 
 permissions: {}
 
@@ -33,7 +38,7 @@ jobs:
       - run: yarn build
       - run: yarn lint
       - run: yarn test
-      - run: yarn package
+      - run: yarn bundle
 
       - name: e2e - install-beachball
         uses: ./install-beachball
@@ -104,7 +109,7 @@ jobs:
       - run: yarn --immutable
 
       - run: yarn build
-      - run: yarn package
+      - run: yarn bundle
 
       # Verify that no newer runs were queued since the check in the previous job
       - uses: ./batch-runs
@@ -125,5 +130,5 @@ jobs:
         if: ${{ steps.batchRuns.outputs.shouldCancel == 'no' }}
         uses: int128/release-typescript-action@59adc6ece39e5e704a0b71e845740e58b5024ae0 # v1
         with:
-          major-version: 2
+          major-version: 3
           token: ${{ secrets.REPO_PAT }}

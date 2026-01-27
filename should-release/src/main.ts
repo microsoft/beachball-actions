@@ -7,7 +7,7 @@ import {
   cancelRun,
   getEnumInput,
   onUnhandledError,
-} from 'beachball-actions-common';
+} from '@microsoft/beachball-actions-common';
 
 async function main() {
   const batch = core.getBooleanInput('batch');

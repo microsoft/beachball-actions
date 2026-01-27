@@ -5,7 +5,7 @@
     "github>microsoft/m365-renovate-config:groupMore",
     "github>microsoft/m365-renovate-config:groupTypes",
     "github>microsoft/m365-renovate-config:keepFresh",
-    "github>microsoft/m365-renovate-config:restrictNode(20)"
+    "github>microsoft/m365-renovate-config:restrictNode(24)"
   ],
   "ignorePresets": ["github>microsoft/m365-renovate-config:dependencyDashboardMajor"],
 
@@ -30,7 +30,7 @@
     },
     {
       "matchPackageNames": ["@types/node"],
-      "allowedVersions": "20.x"
+      "allowedVersions": "24.x"
     },
     {
       // Group most updates

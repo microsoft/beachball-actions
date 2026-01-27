@@ -11,5 +11,5 @@ outputs:
   shouldCancel:
     description: Whether the run should be canceled ("yes" or "no")
 runs:
-  using: node20
+  using: node24
   main: dist/index.js

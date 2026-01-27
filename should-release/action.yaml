@@ -19,5 +19,5 @@ outputs:
   shouldRelease:
     description: Whether the release should continue ("yes" or "no")
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/index.js'

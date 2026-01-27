@@ -1,18 +1,18 @@
 {
-  "name": "beachball-actions-monorepo",
+  "name": "@microsoft/beachball-actions-monorepo",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ecraig12345/beachball-actions.git"
+    "url": "https://github.com/microsoft/beachball-actions.git"
   },
   "scripts": {
     "build": "lage build --verbose",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint . --ext .js,.ts --cache",
-    "package": "lage package --verbose",
+    "bundle": "lage bundle --verbose",
     "prepare": "husky",
     "syncpack:check": "syncpack list-mismatches",
     "syncpack": "syncpack fix-mismatches",
@@ -22,8 +22,8 @@
     "@eslint/compat": "^2.0.0",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.29.0",
-    "@tsconfig/node20": "^20.0.0",
-    "@types/node": "^20.0.0",
+    "@tsconfig/node24": "^24.0.0",
+    "@types/node": "^24.0.0",
     "@vercel/ncc": "^0.38.0",
     "beachball": "^2.31.12",
     "eslint": "^9.0.0",

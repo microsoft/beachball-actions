@@ -3,7 +3,7 @@ module.exports = {
   pipeline: {
     build: ['^build'],
     lint: ['build'],
-    package: ['build'],
+    bundle: ['build'],
     test: ['build'],
   },
   npmClient: 'yarn',

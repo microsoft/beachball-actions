@@ -4,7 +4,7 @@ import {
   cancelRun,
   getEnumInput,
   onUnhandledError,
-} from 'beachball-actions-common';
+} from '@microsoft/beachball-actions-common';
 
 const main = async (): Promise<void> => {
   const mode = getEnumInput('mode', ['cancel', 'output'] as const, 'cancel');
