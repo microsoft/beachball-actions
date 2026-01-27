@@ -33,7 +33,7 @@ jobs:
       - run: yarn build
       - run: yarn lint
       - run: yarn test
-      - run: yarn package
+      - run: yarn bundle
 
       - name: e2e - install-beachball
         uses: ./install-beachball
@@ -104,7 +104,7 @@ jobs:
       - run: yarn --immutable
 
       - run: yarn build
-      - run: yarn package
+      - run: yarn bundle
 
       # Verify that no newer runs were queued since the check in the previous job
       - uses: ./batch-runs

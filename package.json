@@ -12,7 +12,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint . --ext .js,.ts --cache",
-    "package": "lage package --verbose",
+    "bundle": "lage bundle --verbose",
     "prepare": "husky",
     "syncpack:check": "syncpack list-mismatches",
     "syncpack": "syncpack fix-mismatches",

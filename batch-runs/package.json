@@ -5,7 +5,7 @@
   "description": "Cancels this workflow run if a newer one is pending",
   "scripts": {
     "build": "rimraf lib && tsc",
-    "package": "rimraf dist && ncc build --source-map --license licenses.txt src/main.ts",
+    "bundle": "rimraf dist && ncc build --source-map --license licenses.txt src/main.ts",
     "test": "jest"
   },
   "devDependencies": {
