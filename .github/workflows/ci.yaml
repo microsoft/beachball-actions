@@ -130,5 +130,5 @@ jobs:
         if: ${{ steps.batchRuns.outputs.shouldCancel == 'no' }}
         uses: int128/release-typescript-action@59adc6ece39e5e704a0b71e845740e58b5024ae0 # v1
         with:
-          major-version: 2
+          major-version: 3
           token: ${{ secrets.REPO_PAT }}
