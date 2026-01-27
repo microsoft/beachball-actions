@@ -15,7 +15,7 @@ jobs:
   build:
     steps:
       # at the end of your workflow:
-      - uses: ecraig12345/beachball-actions/check-for-modified-files@v2
+      - uses: microsoft/beachball-actions/check-for-modified-files@v2
 ```
 
 ## Inputs

@@ -21,7 +21,7 @@ jobs:
       # You must check out code before running this action
       - uses: actions/checkout@v3
 
-      - uses: ecraig12345/beachball-actions/should-release@v2
+      - uses: microsoft/beachball-actions/should-release@v2
         with:
           token: ${{ github.token }}
           batch: true
@@ -41,7 +41,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: ecraig12345/beachball-actions/should-release@v2
+      - uses: microsoft/beachball-actions/should-release@v2
         id: shouldRelease
         with:
           token: ${{ github.token }}

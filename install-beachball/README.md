@@ -15,5 +15,5 @@ jobs:
       # You must check out code before using this action
       - uses: actions/checkout@v3
 
-      - uses: ecraig12345/beachball-actions/install-beachball@v2
+      - uses: microsoft/beachball-actions/install-beachball@v2
 ```
