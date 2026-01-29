@@ -2,20 +2,13 @@
   "name": "@microsoft/beachball-actions-common",
   "version": "0.3.0",
   "private": true,
-  "description": "Utilities for Beachball-related GitHub Actions",
-  "author": "Elizabeth Craig <elcraig@microsoft.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/microsoft/beachball-actions.git"
-  },
   "license": "MIT",
   "main": "lib/index.js",
   "files": [
     "lib"
   ],
   "scripts": {
-    "build": "rimraf lib && tsc",
-    "test": "jest"
+    "build": "yarn run -T rimraf lib && yarn run -T tsc"
   },
   "dependencies": {
     "@actions/core": "^2.0.0",

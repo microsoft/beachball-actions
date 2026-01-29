@@ -4,9 +4,8 @@
   "private": true,
   "description": "Determines whether this release workflow run is needed, and cancels it if not",
   "scripts": {
-    "build": "rimraf lib && tsc",
-    "bundle": "rimraf dist && ncc build --source-map --license licenses.txt src/main.ts",
-    "test": "jest"
+    "build": "yarn run -T rimraf lib && yarn run -T tsc",
+    "bundle": "yarn run -T rimraf dist && yarn run -T ncc build --source-map --license licenses.txt src/main.ts"
   },
   "devDependencies": {
     "@actions/core": "^2.0.0",
