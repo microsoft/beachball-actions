@@ -3,13 +3,10 @@ import eslint from '@eslint/js';
 import globals from 'globals';
 import path from 'path';
 import tseslint from 'typescript-eslint';
-import { fileURLToPath } from 'url';
-
-const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default tseslint.config(
-  includeIgnoreFile(path.join(dirname, '.gitignore')),
-  includeIgnoreFile(path.join(dirname, '.prettierignore')),
+  includeIgnoreFile(path.join(import.meta.dirname, '.gitignore')),
+  includeIgnoreFile(path.join(import.meta.dirname, '.prettierignore')),
   eslint.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
   {
@@ -17,16 +14,15 @@ export default tseslint.config(
       globals: {
         ...globals.node,
       },
-      ecmaVersion: 2022,
+      ecmaVersion: 2024,
       parserOptions: {
-        tsconfigRootDir: dirname,
+        tsconfigRootDir: import.meta.dirname,
         projectService: true,
       },
     },
 
     rules: {
       '@typescript-eslint/no-non-null-assertion': 'off',
-      '@typescript-eslint/no-unsafe-call': 'off',
     },
   },
   // {
