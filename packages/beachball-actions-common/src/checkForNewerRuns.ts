@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
-import { logGithubRequestError } from './logGithubRequestError';
+import { logGithubRequestError } from './logGithubRequestError.js';
 
 type Octokit = ReturnType<typeof github.getOctokit>;
 type WorkflowRunsResult = Awaited<

@@ -4,9 +4,7 @@
   "compilerOptions": {
     "noEmit": true,
     "allowJs": true,
-    "checkJs": true,
-    "esModuleInterop": true,
-    "module": "nodenext"
+    "checkJs": true
   },
   "include": ["./*.js", "./*.mjs", "./*/*.js", "./packages/*/*.js"],
   "exclude": ["**/node_modules"]

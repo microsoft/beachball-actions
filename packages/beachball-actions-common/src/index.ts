@@ -1,5 +1,5 @@
-export { cancelRun } from './cancelRun';
-export { checkForNewerRuns } from './checkForNewerRuns';
-export { getEnumInput } from './getEnumInput';
-export { logGithubRequestError } from './logGithubRequestError';
-export { onUnhandledError } from './onUnhandledError';
+export { cancelRun } from './cancelRun.js';
+export { checkForNewerRuns } from './checkForNewerRuns.js';
+export { getEnumInput } from './getEnumInput.js';
+export { logGithubRequestError } from './logGithubRequestError.js';
+export { onUnhandledError } from './onUnhandledError.js';

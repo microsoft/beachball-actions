@@ -1,9 +1,9 @@
 {
   "extends": "@tsconfig/node24/tsconfig.json",
   "compilerOptions": {
+    "module": "node16",
+    "moduleResolution": "node16",
     "noUnusedLocals": true,
-    // esModuleInterop doesn't work well with esbuild CJS output (at least for @actions packages)
-    "esModuleInterop": false,
     "types": ["node"]
   }
 }

@@ -3,7 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "main": "lib/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js"
+    }
+  },
   "scripts": {
     "build": "repo-scripts build"
   },

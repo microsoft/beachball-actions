@@ -8,6 +8,16 @@ import { findPackageRoot } from '../findPackageRoot.js';
 const entryFileRel = 'src/index.ts';
 const outDirRel = 'dist';
 
+const requireHeader = `
+// @ts-nocheck
+/* eslint-disable */
+import { createRequire as topLevelCreateRequire } from 'node:module';
+import topLevelPath from 'node:path';
+import topLevelUrl from 'node:url';
+const require = topLevelCreateRequire(import.meta.url);
+const __filename = topLevelUrl.fileURLToPath(import.meta.url);
+const __dirname = topLevelPath.dirname(__filename);`.trim();
+
 export default async function bundle() {
   const packageRoot = findPackageRoot();
   if (packageRoot !== process.cwd()) {
@@ -24,9 +34,16 @@ export default async function bundle() {
       outdir: outDirRel,
       bundle: true,
       treeShaking: true,
-      format: 'cjs',
+      format: 'esm',
       platform: 'node',
       target: ['node24'],
+      banner: {
+        // This is added at the top of every file and makes CJS globals work in esbuild output.
+        // We need require() for bundled CJS that loads Node internals or native packages.
+        // The bundled CJS deps also use __filename and __dirname in a couple places.
+        // https://github.com/evanw/esbuild/issues/946#issuecomment-814703190
+        js: requireHeader,
+      },
       minify: true,
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       plugins: [licensePlugin()],

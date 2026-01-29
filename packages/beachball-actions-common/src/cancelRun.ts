@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
-import { logGithubRequestError } from './logGithubRequestError';
+import { logGithubRequestError } from './logGithubRequestError.js';
 
 /**
  * Cancel this workflow run.
