@@ -1,17 +1,17 @@
 {
   "name": "@microsoft/beachball-actions-common",
-  "version": "0.3.0",
+  "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "main": "lib/index.js",
-  "files": [
-    "lib"
-  ],
   "scripts": {
-    "build": "yarn run -T rimraf lib && yarn run -T tsc"
+    "build": "repo-scripts build"
   },
   "dependencies": {
-    "@actions/core": "^2.0.0",
-    "@actions/github": "^7.0.0"
+    "@actions/core": "catalog:",
+    "@actions/github": "catalog:"
+  },
+  "devDependencies": {
+    "@microsoft/beachball-actions-scripts": "workspace:"
   }
 }

@@ -1,10 +1,10 @@
-/** @type {import('lage').ConfigOptions} */
-module.exports = {
+/** @import { ConfigOptions, CacheOptions } from 'lage' */
+
+/** @type {Partial<Omit<ConfigOptions, 'cacheOptions'>> & { cacheOptions: Partial<CacheOptions> }} */
+const config = {
   pipeline: {
     build: ['^build'],
-    lint: ['build'],
     bundle: ['build'],
-    test: ['build'],
   },
   npmClient: 'yarn',
   cacheOptions: {
@@ -21,3 +21,5 @@ module.exports = {
     outputGlob: ['dist/**/*', 'lib/**/*', '!node_modules'],
   },
 };
+
+module.exports = config;

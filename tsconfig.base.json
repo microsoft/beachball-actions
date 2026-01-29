@@ -1,8 +1,9 @@
 {
   "extends": "@tsconfig/node24/tsconfig.json",
   "compilerOptions": {
-    // synthetic default imports don't seem to work with ncc
+    "noUnusedLocals": true,
+    // esModuleInterop doesn't work well with esbuild CJS output (at least for @actions packages)
     "esModuleInterop": false,
-    "pretty": true
+    "types": ["node"]
   }
 }

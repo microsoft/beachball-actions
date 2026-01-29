@@ -1,3 +1,4 @@
+// Only used for eslint and intellisense for files outside package src folders
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {

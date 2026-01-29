@@ -4,12 +4,13 @@
   "private": true,
   "description": "Determines whether this release workflow run is needed, and cancels it if not",
   "scripts": {
-    "build": "yarn run -T rimraf lib && yarn run -T tsc",
-    "bundle": "yarn run -T rimraf dist && yarn run -T ncc build --source-map --license licenses.txt src/main.ts"
+    "build": "repo-scripts build",
+    "bundle": "repo-scripts bundle"
   },
   "devDependencies": {
-    "@actions/core": "^2.0.0",
-    "@actions/glob": "^0.5.0",
-    "@microsoft/beachball-actions-common": "0.3.0"
+    "@actions/core": "catalog:",
+    "@actions/glob": "catalog:",
+    "@microsoft/beachball-actions-common": "workspace:",
+    "@microsoft/beachball-actions-scripts": "workspace:"
   }
 }

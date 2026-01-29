@@ -17,13 +17,9 @@ permissions: {}
 
 jobs:
   ci:
-    outputs:
-      shouldCancel: ${{ steps.batchRuns.outputs.shouldCancel }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
-        with:
-          fetch-depth: 0
 
       - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
@@ -37,7 +33,6 @@ jobs:
 
       - run: yarn build
       - run: yarn lint
-      - run: yarn test
       - run: yarn bundle
 
       - name: e2e - install-beachball
@@ -84,51 +79,3 @@ jobs:
             } else {
               core.info(`should-release returned shouldRelease: "${shouldRelease}"`);
             }
-
-  # Run the release in a separate job with access to an environment with a token.
-  # This approach requires re-running the build but skips the tests.
-  release:
-    needs: ci
-    if: ${{ github.ref == 'refs/heads/main' && needs.ci.outputs.shouldCancel == 'no' }}
-
-    runs-on: ubuntu-latest
-
-    environment: release
-
-    steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
-        with:
-          node-version-file: .nvmrc
-          cache: yarn
-
-      - run: yarn --immutable
-
-      - run: yarn build
-      - run: yarn bundle
-
-      # Verify that no newer runs were queued since the check in the previous job
-      - uses: ./batch-runs
-        id: batchRuns
-        with:
-          mode: output
-          token: ${{ github.token }}
-
-      - name: Set git config
-        run: |
-          git config user.name "Elizabeth Craig"
-          git config user.email "elcraig@microsoft.com"
-          git remote set-url origin "https://$REPO_PAT@github.com/$GITHUB_REPOSITORY"
-        env:
-          REPO_PAT: ${{ secrets.REPO_PAT }}
-
-      - name: Release actions
-        if: ${{ steps.batchRuns.outputs.shouldCancel == 'no' }}
-        uses: int128/release-typescript-action@59adc6ece39e5e704a0b71e845740e58b5024ae0 # v1
-        with:
-          major-version: 3
-          token: ${{ secrets.REPO_PAT }}
