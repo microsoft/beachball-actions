@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "description": "Determines whether this release workflow run is needed, and cancels it if not",
+  "type": "module",
   "scripts": {
     "build": "repo-scripts build",
     "bundle": "repo-scripts bundle"

@@ -1,7 +1,7 @@
 import * as core from '@actions/core';
 import * as glob from '@actions/glob';
-import * as fs from 'fs';
-import * as path from 'path';
+import fs from 'fs';
+import path from 'path';
 import {
   checkForNewerRuns,
   cancelRun,

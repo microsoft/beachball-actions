@@ -14,7 +14,9 @@
   "packageRules": [
     {
       "groupName": "github action packages",
-      "matchPackageNames": ["@actions/*"]
+      "matchPackageNames": ["@actions/*"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["catalog"]
     }
   ],
   "customManagers": [

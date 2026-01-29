@@ -24,7 +24,7 @@ export default async function bundle() {
       outdir: outDirRel,
       bundle: true,
       treeShaking: true,
-      format: 'cjs',
+      format: 'esm',
       platform: 'node',
       target: ['node24'],
       minify: true,
