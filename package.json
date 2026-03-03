@@ -14,8 +14,8 @@
     "lint": "eslint . --ext .js,.ts --cache",
     "bundle": "lage bundle --verbose",
     "prepare": "husky",
-    "syncpack:check": "syncpack list-mismatches",
-    "syncpack:update": "syncpack fix-mismatches"
+    "syncpack:check": "syncpack lint",
+    "syncpack:update": "syncpack fix"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
