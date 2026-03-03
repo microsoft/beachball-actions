@@ -58,8 +58,11 @@
     "versionGroups": [
       {
         "label": "lint prod and dev deps",
-        "dependencies": ["!prod", "!dev"],
-        "isIgnored": true,
+        "dependencies": [
+          "!prod",
+          "!dev"
+        ],
+        "isIgnored": true
       },
       {
         "label": "internal deps use workspace protocol",
