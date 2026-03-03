@@ -14,8 +14,8 @@
     "lint": "eslint . --ext .js,.ts --cache",
     "bundle": "lage bundle --verbose",
     "prepare": "husky",
-    "syncpack:check": "syncpack list-mismatches",
-    "syncpack:update": "syncpack fix-mismatches"
+    "syncpack:check": "syncpack lint",
+    "syncpack:update": "syncpack fix"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
@@ -34,7 +34,7 @@
     "lint-staged": "^16.0.0",
     "nano-spawn": "^2.0.0",
     "prettier": "^3.0.0",
-    "syncpack": "^13.0.0",
+    "syncpack": "^14.0.0",
     "typescript": "~5.9.0",
     "typescript-eslint": "^8.34.1"
   },
@@ -55,11 +55,15 @@
     ]
   },
   "syncpack": {
-    "dependencyTypes": [
-      "dev",
-      "prod"
-    ],
     "versionGroups": [
+      {
+        "label": "lint prod and dev deps",
+        "dependencies": [
+          "!prod",
+          "!dev"
+        ],
+        "isIgnored": true
+      },
       {
         "label": "internal deps use workspace protocol",
         "dependencies": [
