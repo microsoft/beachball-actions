@@ -55,10 +55,6 @@
     ]
   },
   "syncpack": {
-    "dependencyTypes": [
-      "dev",
-      "prod"
-    ],
     "versionGroups": [
       {
         "label": "lint prod and dev deps",
