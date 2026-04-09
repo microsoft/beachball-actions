@@ -4,7 +4,8 @@
     "github>microsoft/m365-renovate-config",
     "github>microsoft/m365-renovate-config:groupMore",
     "github>microsoft/m365-renovate-config:keepFresh",
-    "github>microsoft/m365-renovate-config:restrictNode(24)"
+    "github>microsoft/m365-renovate-config:restrictNode(24)",
+    "github>microsoft/m365-renovate-config:scheduleNoisy"
   ],
   "ignorePresets": ["github>microsoft/m365-renovate-config:dependencyDashboardMajor"],
 
