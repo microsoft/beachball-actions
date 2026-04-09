@@ -45,7 +45,7 @@ jobs:
           REPO_PAT: ${{ secrets.REPO_PAT }}
 
       - name: Release actions
-        uses: int128/release-typescript-action@5a97f0b6250842f5c43686ee853f10208f9082c6 # v1
+        uses: int128/release-typescript-action@0716cc64c1b9a0a414070f587ebdf28c2ebe6cff # v1
         with:
           major-version: 3
           token: ${{ secrets.REPO_PAT }}
