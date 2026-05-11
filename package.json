@@ -31,7 +31,7 @@
     "globals": "^17.4.0",
     "husky": "^9.0.0",
     "lage": "^2.15.7",
-    "lint-staged": "^16.0.0",
+    "lint-staged": "^17.0.0",
     "nano-spawn": "^2.1.0",
     "prettier": "^3.8.1",
     "syncpack": "^14.3.0",
