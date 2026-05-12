@@ -34,7 +34,7 @@
     "lint-staged": "^16.0.0",
     "nano-spawn": "^2.1.0",
     "prettier": "^3.8.1",
-    "syncpack": "^14.3.0",
+    "syncpack": "^15.0.0",
     "typescript": "~6.0.0",
     "typescript-eslint": "^8.58.1"
   },
