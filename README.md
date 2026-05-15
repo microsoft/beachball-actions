@@ -1,8 +1,8 @@
-# beachball-actions
+# beachball-actions - moved to [`microsoft/beachball/actions/*`](https://github.com/microsoft/beachball/tree/main/actions)
+
+**These actions have relocated to the `beachball` repo.** `batch-runs` has been deprecated due to limited usefulness ([see notes and alternatives](batch-runs)).
 
 This monorepo contains GitHub Actions, mostly related to [Beachball](https://microsoft.github.io/beachball/), plus a few others.
-
-(Thanks to https://github.com/int128/typescript-actions-monorepo for the TypeScript actions monorepo template!)
 
 ## Actions
 

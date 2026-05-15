@@ -1,5 +1,22 @@
 # batch-runs
 
+## ⚠️ Action is deprecated
+
+This action has been deprecated: the only time it's really needed is release workflows that automatically run on every push to `main`, which has become less common (it's generally better to run releases either manually or on a schedule).
+
+The following concurrency setting is adequate for a typical PR/CI workflow:
+
+```yml
+concurrency:
+  # For PRs, use the ref (branch) in the concurrency group so that new pushes cancel any old runs.
+  # For pushes to main, ideally we wouldn't set a concurrency group, but github actions doesn't
+  # support conditional blocks of settings, so we use the SHA so the "group" is unique.
+  group: ${{ github.workflow }}-${{ github.ref == 'refs/heads/main' && github.sha || github.ref }}
+  cancel-in-progress: true
+```
+
+## Overview
+
 Cancels this workflow run if any newer runs are pending for this branch (unless `mode` is `output`). This is meant to emulate the Azure DevOps `trigger: batch: true` option.
 
 Runs against tags are not supported.
@@ -52,10 +69,11 @@ jobs:
 
 ## Inputs
 
-| Name    | Type                 | Required | Default  | Description                                                       |
-| ------- | -------------------- | -------- | -------- | ----------------------------------------------------------------- |
-| `token` | string               | yes      |          | GitHub token with `actions:write` permission                      |
-| `mode`  | `cancel` \| `output` |          | `cancel` | Whether to cancel the job or only output the result to a variable |
+<!-- prettier-ignore -->
+| Name | Type | Required | Default | Description |
+| ---- | ---- | -------- | ------- | ----------- |
+| `token` | string | yes | | GitHub token with `actions:write` permission |
+| `mode` | `cancel` \| `output` | | `cancel` | Whether to cancel the job or only output the result to a variable |
 
 ## Notes
 

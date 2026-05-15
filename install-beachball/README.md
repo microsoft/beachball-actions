@@ -1,4 +1,4 @@
-# install-beachball
+# install-beachball - moved to `microsoft/beachball/actions/install-beachball`
 
 Globally installs the version of [Beachball](https://microsoft.github.io/beachball) specified in the repo root `package.json`'s `devDependencies`.
 

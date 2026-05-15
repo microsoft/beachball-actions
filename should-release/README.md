@@ -1,4 +1,4 @@
-# should-release
+# should-release - moved to `microsoft/beachball/actions/should-release`
 
 Determines whether a release workflow run is needed, and cancels it if not (unless `mode` is `output`). A run is needed if:
 

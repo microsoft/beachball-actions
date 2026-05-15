@@ -1,4 +1,4 @@
-# check-for-modified-files
+# check-for-modified-files - moved to `microsoft/beachball/actions/check-for-modified-files`
 
 Run this at the end of a workflow to determine if any files were modified, and if so, fail.
 
